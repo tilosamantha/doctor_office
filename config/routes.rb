@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root 'patients#index'
+  root 'doctors#index'
 
   resources :doctors
-  resources :patients
-
+  resources :patients do
+    resources :appointments
+  end
 end

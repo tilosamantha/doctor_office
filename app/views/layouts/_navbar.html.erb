@@ -1,0 +1,19 @@
+<nav>
+  <ul>
+    <li>
+      <%= link_to 'See All Doctors', doctors_path %>
+    </li>
+    <li>
+      <%= link_to 'See All Appointments', patient_appointments_path(:patient_id) %>
+    </li>
+    <li>
+      <%= link_to 'Add Appointment', new_patient_appointment_path(:patient_id) %>
+    </li>
+    <li>
+    <%= link_to 'See All Patients', patients_path %>
+    </li>
+    <li>
+      <%= link_to 'Add Patient', new_patient_path %>
+    </li>
+  </ul>
+</nav>
