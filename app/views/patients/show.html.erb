@@ -1,2 +1,16 @@
-<h1>Patients#show</h1>
-<p>Find me in app/views/patients/show.html.erb</p>
+<h1><%= @patient.full_name %></h1>
+<hr />
+<h3>Patient Appointments </h3>
+
+<ul>
+  <% @patient.appointments.each do |appointment| %>
+    <li>
+      <%= link_to appointment.date, appointment %>
+    </li>
+  <% end %>
+</ul>
+
+
+<br />
+<%= link_to 'Delete Patient', @patient, method: :delete, class: 'ui red button' %>
+

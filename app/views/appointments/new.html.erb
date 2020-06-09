@@ -1,3 +1,13 @@
 <h1>Schedule a new Appointment</h1>
 
-<%= render partial: 'form' %>
+<%= form_with(model: [@patient, @appointment], local: true, class: 'ui form') do |f| %>
+  <div class="field">
+    <%= f.label :day %>
+    <%= f.text_field :day, required: true, placeholder: 'Day of the Month' %>
+  </div>
+  <div class="field">
+    <%= f.label :month %>
+    <%= f.text_field :month, required: true, placeholder: 'Month' %>
+  </div>
+<%= f.submit nil, class: 'ui blue button' %>
+<% end %>

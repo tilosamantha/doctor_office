@@ -24,7 +24,9 @@ specialties = ['Pediatrician', 'Dermatologist', 'Gynocologist', 'Cardilogist', '
     2.times do
       appointment = Appointment.create(
         day: Faker::Number.within(range: 1..31),
-        month: Faker::Number.within(range: 1..12)
+        month: Faker::Number.within(range: 1..12),
+        patient_id: patient.id,
+        doctor_id: doctor.id
       )
     end
   end

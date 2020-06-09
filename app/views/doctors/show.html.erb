@@ -1,9 +1,9 @@
 <h1><%= @doctor.full_name %></h1>
 <hr />
-<h2>Doctor's Patients </h2>
+<h2>Doctors Patients </h2>
 
 <ul>
-  <% @patients.each do |patient| %>
+  <% @doctor.appointments.each do |patient| %>
     <li>
     <%= link_to patient.full_name, patient %>
     </li>
