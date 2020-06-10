@@ -1,7 +1,5 @@
-<h1>Add an Appointment</h1>
 
-  <%= form_with(model: @appointment, local: true, class: 'ui form') do |f| %>
-
+<%= form_with(model: @appointments, local: true, class: 'ui form') do |f| %>
     <div class="field">
       <%= f.label :day %>
       <%= f.text_field :day, required: true, placeholder: 'Day of the Month' %>

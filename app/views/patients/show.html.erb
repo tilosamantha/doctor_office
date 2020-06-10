@@ -10,11 +10,14 @@
   <% end %>
 </ul>
 
-
-<br />
-<%= link_to 'Delete Patient', @patient, method: :delete, class: 'ui red button' %>
+<%= link_to 'Add Appointment', new_patient_appointment_path(:patient_id), class: 'ui blue button' %>
 
 <hr/>
+<br>
+<br>
+<%= link_to 'Delete Patient', @patient, method: :delete, class: 'ui red button' %>
+
+<br>
 <br>
 <%= link_to 'Edit Patient', edit_patient_path, class: 'ui blue button' %>
 

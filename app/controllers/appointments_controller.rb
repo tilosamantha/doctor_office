@@ -8,17 +8,15 @@ class AppointmentsController < ApplicationController
   def show
   end
 
-  def new
-     
-        # @appointment = Appointment.all - @patient.appointment 
+  def new 
     @appointment = Appointment.new
   end
 
   def create
-    @appointment = @patient.appointments.new(appointment_params)
+    @appointment = Appointment.new(appointment_params)
  
     if @appointment.save
-      redirect_to patient_appointments_path(@patient), notice: "Appointment Created"
+      redirect_to @appointment
     else
       render :new
     end
@@ -31,7 +29,7 @@ class AppointmentsController < ApplicationController
 
   private
     def appointment_params
-      params.require(:appointment).permit(:month, :day)
+      params.require(:appointment).permit(:month, :day, :patient_id)
     end
     
     def set_patient

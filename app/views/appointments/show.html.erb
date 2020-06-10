@@ -2,6 +2,7 @@
 
 
 <%= form_with(model: [@patient, @appointment], local: true, class: 'ui form') do |f| %>
+
   <div class="field">
     <%= f.label :day %>
     <%= f.text_field :day, required: true, placeholder: 'Day of the Month' %>
