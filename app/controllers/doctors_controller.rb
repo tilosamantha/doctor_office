@@ -24,9 +24,11 @@ class DoctorsController < ApplicationController
   end
 
   def edit
+    @doctor = Doctor.find(params[:id])
   end
 
   def update
+    @doctor = Doctor.find(params[:id])
     if @doctor.update(doctor_params)
       redirect_to @doctor
     else

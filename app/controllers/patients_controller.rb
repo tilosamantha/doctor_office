@@ -23,6 +23,18 @@ class PatientsController < ApplicationController
     end
   end
 
+  def edit
+    @patient = Patient.find(params[:id])
+  end
+
+  def update
+    if @patient.update(patient_params)
+      redirect_to @patient
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @patient.destroy
     redirect_to patient_path 

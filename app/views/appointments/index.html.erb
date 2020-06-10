@@ -5,11 +5,11 @@
 <hr />
 <h2>Scheduled: </h2>
 <ul>
-  <% @appointments.each do |appointment| %>
+  <% @appointments.each do |t| %>
     <li>
-      <%= @appointment.date %>
+      <%= t.appointment.date %>
       <br />
-      <%= link_to 'Remove', [@appointment], method: :delete %>
+      <%= link_to 'Remove', [@appointment, t], method: :delete %>
     </li>
   <% end %>
 </ul>

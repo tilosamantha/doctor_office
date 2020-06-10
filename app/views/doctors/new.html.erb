@@ -9,7 +9,9 @@
 
   <div class="field">
     <%= f.label :specialty %>
-    <%= f.text_field :specialty, required: true, placeholder: 'Specialty' %>
+    <%= f.select :specialty, ['Pediatrician', 'Dermatologist', 'Gynocologist', 'Cardilogist', 'ENT', 'Plastic Surgeon'] %>
   </div>
 <%= f.submit nil, class: 'ui blue button' %>
 <% end %>
+
+

@@ -1,16 +1,19 @@
 <h1><%= @doctor.full_name %></h1>
 <hr />
-<h2>Doctors Patients </h2>
+<h2>Doctors Appointments </h2>
 
 <ul>
-  <% @doctor.appointments.each do |patient| %>
+  <% @doctor.appointments.each do |appointment| %>
     <li>
-    <%= link_to patient.full_name, patient %>
+    <%= link_to appointment.date, appointment %>
     </li>
   <% end %>
 </ul>
 
 <br />
-<%= link_to 'Delete Patient', @patient, method: :delete, class: 'ui red button' %>
+<%= link_to 'Delete Appointment', @appointment, method: :delete, class: 'ui red button' %>
+<hr/>
+<br>
+<%= link_to 'Edit Doctor', edit_doctor_path, class: 'ui blue button' %>
 
 
