@@ -8,7 +8,7 @@
   <% @appointments.each do |appointment| %>
     <li>
       <%= appointment.date %>
-      <%= link_to 'Remove', [@appointment, t], method: :delete %>
+      <%= link_to 'Remove', @appointment, method: :delete %>
     </li>
   <% end %>
 </ul>

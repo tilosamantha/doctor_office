@@ -5,13 +5,17 @@
 <ul>
   <% @doctor.appointments.each do |appointment| %>
     <li>
-    <%= link_to appointment.date, appointment %>
+    <%= link_to appointment.date, patient_appointment_path(appointment.patient_id, appointment.id) %>
+    <br>
+    <%= link_to 'Delete Appointment', patient_appointment_path(appointment.patient_id, appointment.id), method: :delete %>
+    <br>
+    <br>
+    <br>
     </li>
   <% end %>
 </ul>
 
 <br />
-<%= link_to 'Delete Appointment', @appointment, method: :delete, class: 'ui red button' %>
 <hr/>
 <br>
 <%= link_to 'Edit Doctor', edit_doctor_path, class: 'ui blue button' %>

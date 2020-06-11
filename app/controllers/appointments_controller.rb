@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_patient
+  before_action :set_patient, only: [:destroy]
   before_action :set_appointment, only: [:show, :edit, :destroy]
 
   def index
@@ -23,8 +23,8 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    @patient.appointments.find(paramans[:id]).destroy
-    redirect_to patient_appointments_path(@patient)
+    @appointment.destroy
+    redirect_to root_path
   end
 
   private

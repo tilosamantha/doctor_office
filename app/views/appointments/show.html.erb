@@ -1,15 +1,16 @@
-<h1>Appointments#show</h1>
+<h1> Appointment Details </h1>
 
 
-<%= form_with(model: [@patient, @appointment], local: true, class: 'ui form') do |f| %>
+<ul>
+  <%# @appointments.each do |appointment| %>
+    <li>
+    <%= link_to @appointment.date, patient_appointment_path(@appointment.patient_id, @appointment.id) %>
+    </li>
+  <%# end %>
+</ul>
 
-  <div class="field">
-    <%= f.label :day %>
-    <%= f.text_field :day, required: true, placeholder: 'Day of the Month' %>
-  </div>
-  <div class="field">
-    <%= f.label :month %>
-    <%= f.text_field :month, required: true, placeholder: 'Month' %>
-  </div>
-<%= f.submit nil, class: 'ui blue button' %>
-<% end %>
+<br />
+<%= button_to 'Delete Appointment', patient_appointment_path(@appointment.patient_id, @appointment.id), method: :delete %>
+<hr/>
+<br>
+<%= link_to 'Edit Doctor', edit_doctor_path, class: 'ui blue button' %>
