@@ -1,14 +1,13 @@
-<h1> Appointments</h1>
+<h1> Appointments </h1>
 
 
-<%= link_to 'Add Appointment', new_patient_appointment_path(:patient_id)%>
+<%= link_to 'Add Appointment', new_patient_appointment_path %>
 <hr />
-<h2>Scheduled: </h2>
+<h2> Scheduled: </h2>
 <ul>
-  <% @appointments.each do |t| %>
+  <% @appointments.each do |appointment| %>
     <li>
-      <%= t.appointment.date %>
-      <br />
+      <%= appointment.date %>
       <%= link_to 'Remove', [@appointment, t], method: :delete %>
     </li>
   <% end %>

@@ -1,5 +1,5 @@
 
-<%= form_with(model: @appointments, local: true, class: 'ui form') do |f| %>
+<%= form_with(model: [@patient, @appointment], local: true, class: 'ui form') do |f| %>
     <div class="field">
       <%= f.label :day %>
       <%= f.text_field :day, required: true, placeholder: 'Day of the Month' %>
@@ -8,5 +8,10 @@
       <%= f.label :month %>
       <%= f.text_field :month, required: true, placeholder: 'Month' %>
     </div>
+
+    <div class="field">
+    <%= f.label :doctor %>
+    <%= f.select :doctor_id, Doctor.all.collect { |doc| [doc.last_name, doc.id] }  %>
+  </div>
   <%= f.submit nil, class: 'ui blue button' %>
 <% end %>

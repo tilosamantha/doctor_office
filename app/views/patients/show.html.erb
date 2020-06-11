@@ -5,12 +5,12 @@
 <ul>
   <% @patient.appointments.each do |appointment| %>
     <li>
-      <%= link_to appointment.date, appointment %>
+      <%= link_to appointment.date, patient_appointment_path(appointment.patient_id, appointment.id) %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'Add Appointment', new_patient_appointment_path(:patient_id), class: 'ui blue button' %>
+<%= link_to 'Add Appointment', new_patient_appointment_path(@patient), class: 'ui blue button' %>
 
 <hr/>
 <br>

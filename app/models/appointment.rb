@@ -1,6 +1,6 @@
 class Appointment < ApplicationRecord
-  belongs_to :doctors, dependent: :destroy
-  belongs_to :patients, dependent: :destroy
+  belongs_to :doctor, dependent: :destroy
+  belongs_to :patient, dependent: :destroy
 
   validates :month, :day, presence: true
 
